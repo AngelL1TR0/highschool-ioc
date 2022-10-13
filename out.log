@@ -1,0 +1,5 @@
+2022-10-13 12:27:44 INFO  StudentReader:20 - Introduce el NIF
+2022-10-13 12:27:55 INFO  StudentReader:20 - Introduce el NIF
+2022-10-13 12:28:08 INFO  StudentReader:22 - Introduce el nombre
+2022-10-13 12:28:12 INFO  StudentReader:24 - Introduce los apellidos
+2022-10-13 12:28:19 INFO  Main:21 - Student(nif=489587P, name=Angel, surname=Torija)
