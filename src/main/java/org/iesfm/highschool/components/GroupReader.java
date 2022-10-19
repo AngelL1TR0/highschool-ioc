@@ -21,9 +21,9 @@ public class GroupReader {
         log.info("Introduce la letra del curso");
         String letter = scanner.nextLine();
         log.info("Introduce el curso");
-        String course = scanner.nextLine();
+        int course = scanner.nextInt();
         log.info("Lista de estudiantes:");
         Student students = new Student();
-        return new Group(letter, course, students);
+        return new Group(letter, course,students);
     }
 }
