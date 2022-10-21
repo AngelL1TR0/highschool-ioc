@@ -2,9 +2,8 @@ package org.iesfm.highschool.configuration;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.iesfm.highschool.components.GroupReader;
-import org.iesfm.highschool.components.HighschoolWriter;
-import org.iesfm.highschool.components.StudentReader;
+import org.iesfm.highschool.components.*;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +21,16 @@ public class HighschoolConfiguration {
     }
 
     @Bean
+    public HighSchoolReader highschoolReader(Scanner scanner, GroupReader groupReader) {
+        return new HighSchoolReader(scanner, groupReader);
+    }
+
+    @Bean
+    public GroupReader groupReader(Scanner scanner, StudentReader studentReader) {
+        return new GroupReader(scanner, studentReader);
+    }
+
+    @Bean
     public StudentReader studentReader(Scanner scanner) {
         return new StudentReader(scanner);
     }
@@ -34,13 +43,16 @@ public class HighschoolConfiguration {
     @Bean
     public HighschoolWriter highschoolWriter(
             ObjectMapper objectMapper,
-            @Value("${output.path}") String outputPath) {
-        return new HighschoolWriter(objectMapper, outputPath);
+            @Value("${output.path}") String path
+    )  {
+        return new HighschoolWriter(objectMapper, path);
     }
 
     @Bean
-    public GroupReader groupReader( Scanner scanner){
-        return  new GroupReader(scanner);
+    public HighschoolProgram highschoolProgram(
+            HighSchoolReader  highschoolReader,
+            HighschoolWriter  highschoolWriter
+    ) {
+        return new HighschoolProgram(highschoolReader, highschoolWriter);
     }
-
 }
