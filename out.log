@@ -3,3 +3,6 @@
 2022-10-13 12:28:08 INFO  StudentReader:22 - Introduce el nombre
 2022-10-13 12:28:12 INFO  StudentReader:24 - Introduce los apellidos
 2022-10-13 12:28:19 INFO  Main:21 - Student(nif=489587P, name=Angel, surname=Torija)
+2022-10-26 10:28:12 WARN  AnnotationConfigApplicationContext:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [org.iesfm.highschool.configuration.HighschoolConfiguration]; nested exception is java.io.FileNotFoundException: class path resource [application.properties] cannot be opened because it does not exist
+2022-10-26 10:29:50 WARN  AnnotationConfigApplicationContext:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [org.iesfm.highschool.configuration.HighschoolConfiguration]; nested exception is java.io.FileNotFoundException: class path resource [application.properties] cannot be opened because it does not exist
+2022-10-26 10:36:24 INFO  HighSchoolReader:20 - Introduce el nombre del instituto: 
